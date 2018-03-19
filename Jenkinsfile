@@ -8,7 +8,7 @@ pipeline {
                     props=readProperties file: 'gradle.properties'
                     VERSION="${props.version}-${props.apiVersion}"
                 }
-                sh "docker build --tag 'dtr.rogfk.no/fint-beta/adapter-ressurser-tilganger-demo:${VERSION}' --build-arg apiVersion=${props.apiVersion} ."
+                sh "docker build --tag 'dtr.rogfk.no/fint-beta/fint-adapter-rettigheter-felles:${VERSION}' --build-arg apiVersion=${props.apiVersion} ."
             }
         }
         stage('Publish') {
@@ -18,7 +18,7 @@ pipeline {
             }
             steps {
                 withDockerRegistry([credentialsId: 'dtr-rogfk-no', url: 'https://dtr.rogfk.no']) {
-                    sh "docker push 'dtr.rogfk.no/fint-beta/adapter-ressurser-tilganger-demo:${VERSION}'"
+                    sh "docker push 'dtr.rogfk.no/fint-beta/fint-adapter-rettigheter-felles:${VERSION}'"
                 }
             }
         }

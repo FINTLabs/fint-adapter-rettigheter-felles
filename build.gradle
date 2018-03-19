@@ -78,7 +78,7 @@ build.dependsOn(copyExternalDependencies)
 build.dependsOn(copyFintDependencies)
 
 jar {
-    baseName = 'fint-adapter-ressurser-tilganger-demo'
+    baseName = 'fint-adapter-rettigheter-felles'
     manifest {
         attributes(
                 "Manifest-Version": "1.0",
