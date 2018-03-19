@@ -53,9 +53,9 @@ public class EventHandlerService {
 
     private void onGetAllRettighet(Event<FintResource> responseEvent) {
 
-        responseEvent.addData(FintResource.with(RettighetsFactory.createRettighet("uri:fint.no:ist:vigovoksen", "Vigo Voksen", "Tilgang til Vigo Voksen")));
-        responseEvent.addData(FintResource.with(RettighetsFactory.createRettighet("uri:fint.no:ist:vigoot", "Vigo OT", "Tilgang til Vigo OT")));
-        responseEvent.addData(FintResource.with(RettighetsFactory.createRettighet("uri:fint.no:ist:vigoinntak", "Vigo inntak", "Tilgang til Vigo inntak")));
+        responseEvent.addData(FintResource.with(RettighetsFactory.createRettighet("no.fint.ist.vigovoksen", "Vigo Voksen", "Tilgang til Vigo Voksen")));
+        responseEvent.addData(FintResource.with(RettighetsFactory.createRettighet("no.fint.ist.vigoot", "Vigo OT", "Tilgang til Vigo OT")));
+        responseEvent.addData(FintResource.with(RettighetsFactory.createRettighet("no.fint.ist.vigoinntak", "Vigo inntak", "Tilgang til Vigo inntak")));
 
     }
 

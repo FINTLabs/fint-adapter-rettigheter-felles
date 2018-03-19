@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  adapter:
+    image: dtr.rogfk.no/fint-beta/adapter-rettigheter-felles:0.0.0-0.99.1
+    environment:
+      TZ: Europe/Oslo
+      fint.adapter.sse-endpoint: https://beta.felleskomponent.no/ressurser/tilganger/provider/sse/%s
+      fint.adapter.status-endpoint: https://beta.felleskomponent.no/ressurser/tilganger/provider/status
+      fint.adapter.response-endpoint: https://beta.felleskomponent.no/ressurser/tilganger/provider/response
+    deploy:
+      placement:
+        constraints:
+          - node.role == worker
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
